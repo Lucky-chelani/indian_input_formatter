@@ -10,5 +10,14 @@ analyzer:
     - macos/**
     - linux/**
 
+
+linter:
+  rules:
+    - prefer_const_constructors
+    - prefer_const_declarations
+    - prefer_final_locals
+    - avoid_print
+    - require_trailing_commas
+    - public_member_api_docs
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
