@@ -1,39 +1,41 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# indian_input_formatters
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
+Composable, cursor-safe Indian input formatters and validators for Flutter.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
+## Why
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Format Indian data as users type — Aadhaar, PAN, GSTIN, IFSC, UPI, phone,
+and INR currency. Cursor never jumps. Works with any `TextField`.
 
-## Features
+## Quick Start
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+\`\`\`dart
+import 'package:indian_input_formatters/indian_input_formatters.dart';
 
-## Getting started
+TextFormField(
+  inputFormatters: [AadhaarInputFormatter()],
+  validator: IndianValidators.aadhaar,
+)
+\`\`\`
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+## Supported fields
 
-## Usage
+| Field | Formatter | Validator |
+|-------|-----------|-----------|
+| Aadhaar | `AadhaarInputFormatter` | `IndianValidators.aadhaar` |
+| PAN | `PanInputFormatter` | `IndianValidators.pan` |
+| GSTIN | `GstinInputFormatter` | `IndianValidators.gstin` |
+| IFSC | `IfscInputFormatter` | `IndianValidators.ifsc` |
+| UPI ID | `UpiIdInputFormatter` | `IndianValidators.upi` |
+| Mobile | `IndianPhoneInputFormatter` | `IndianValidators.phone` |
+| PIN | `PincodeInputFormatter` | `IndianValidators.pincode` |
+| Currency | `IndianCurrencyInputFormatter` | — |
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+## Cursor behaviour
 
-```dart
-const like = 'sample';
-```
+Every formatter preserves cursor position across typing, backspacing,
+pasting, and middle-insertion. See `test/cursor/` for the test matrix.
 
-## Additional information
+## License
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+MIT
