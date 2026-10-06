@@ -8,9 +8,9 @@ void main() {
   const formatter = IndianPhoneInputFormatter();
 
   TextEditingValue value(String text, [int? cursor]) => TextEditingValue(
-    text: text,
-    selection: TextSelection.collapsed(offset: cursor ?? text.length),
-  );
+        text: text,
+        selection: TextSelection.collapsed(offset: cursor ?? text.length),
+      );
 
   group('IndianPhoneInputFormatter', () {
     test('first digit adds +91 prefix', () {

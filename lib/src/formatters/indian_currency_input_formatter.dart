@@ -72,6 +72,5 @@ class IndianCurrencyInputFormatter extends IndianInputFormatter {
   }
 
   @override
-  bool isFormattingChar(String char) =>
-      char == ',' || char == '₹' || char == '.';
+  bool isFormattingChar(String char) => char == ',' || char == '₹';
 }

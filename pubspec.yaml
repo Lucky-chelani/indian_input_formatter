@@ -1,13 +1,13 @@
 name: indian_input_formatter
-description: "Production-grade Indian input formatter for Flutter. Aadhaar , PAN,GSTIN,IFSC,UPI,+91 phone and INR currency with lakh/crore formatting. Cursor-safe.Composable with any TextField."
+description: "Production-grade Indian input formatters for Flutter: Aadhaar, PAN, GSTIN, IFSC, UPI, +91 phone, and INR currency with lakh/crore formatting. Cursor-safe and composable."
 version: 0.1.0
-homepage: https://github.com/Lucky-chelani/indian_input_formatters
-repository: https://github.com/Lucky-chelani/indian_input_formatters
-issue_tracker: https://github.com/Lucky-chelani/indian_input_formatters/issues
+homepage: https://github.com/Lucky-chelani/indian_input_formatter
+repository: https://github.com/Lucky-chelani/indian_input_formatter
+issue_tracker: https://github.com/Lucky-chelani/indian_input_formatter/issues
 
 environment:
-  sdk: "^3.13.5"
-  flutter: ">=3.27.0"
+  sdk: ">=3.3.0 <4.0.0"
+  flutter: ">=3.19.0"
 
 dependencies:
   flutter:

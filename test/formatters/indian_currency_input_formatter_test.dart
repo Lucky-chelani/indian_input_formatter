@@ -8,9 +8,9 @@ void main() {
   const formatter = IndianCurrencyInputFormatter();
 
   TextEditingValue value(String text, [int? cursor]) => TextEditingValue(
-    text: text,
-    selection: TextSelection.collapsed(offset: cursor ?? text.length),
-  );
+        text: text,
+        selection: TextSelection.collapsed(offset: cursor ?? text.length),
+      );
 
   group('IndianCurrencyInputFormatter — Indian grouping', () {
     test('4 digits -> 1,234', () {
@@ -82,6 +82,16 @@ void main() {
         newValue: value('12.3.4'),
         expectedText: '₹12.34',
         expectedCursor: 6,
+      );
+    });
+
+    test('typing decimal point keeps cursor after decimal point', () {
+      expectFormatter(
+        formatter: formatter,
+        oldValue: value('₹1,234', 6),
+        newValue: value('₹1,234.', 7),
+        expectedText: '₹1,234.',
+        expectedCursor: 7,
       );
     });
   });

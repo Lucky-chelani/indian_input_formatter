@@ -8,9 +8,9 @@ void main() {
   const formatter = AadhaarInputFormatter();
 
   TextEditingValue value(String text, [int? cursor]) => TextEditingValue(
-    text: text,
-    selection: TextSelection.collapsed(offset: cursor ?? text.length),
-  );
+        text: text,
+        selection: TextSelection.collapsed(offset: cursor ?? text.length),
+      );
 
   group('AadhaarInputFormatter — formatting', () {
     test('groups 12 digits as 4-4-4', () {

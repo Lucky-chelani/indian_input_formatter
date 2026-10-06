@@ -70,6 +70,10 @@ void main() {
   });
 
   group('IndianValidators.aadhaar', () {
+    test('valid Aadhaar number passes', () {
+      expect(IndianValidators.aadhaar('999999990019'), isNull);
+      expect(IndianValidators.aadhaar('9999 9999 0019'), isNull);
+    });
     test('wrong length rejected', () {
       expect(IndianValidators.aadhaar('12345678901'), isNotNull);
     });
@@ -79,11 +83,18 @@ void main() {
   });
 
   group('IndianValidators.gstin', () {
+    test('valid GSTIN passes', () {
+      expect(IndianValidators.gstin('27AAAPZ2318J1ZI'), isNull);
+      expect(IndianValidators.gstin('27AAACT2727Q1ZW'), isNull);
+    });
     test('wrong length rejected', () {
       expect(IndianValidators.gstin('27AABCU9603R1Z'), isNotNull);
     });
     test('malformed structure rejected', () {
       expect(IndianValidators.gstin('27AABCU9603R1ZM-extra'), isNotNull);
+    });
+    test('invalid checksum rejected', () {
+      expect(IndianValidators.gstin('27AAAPZ2319J1ZI'), isNotNull);
     });
   });
 }

@@ -4,22 +4,23 @@ class LuhnMod36 {
 
   static const String _alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-  /// Returns true if [code] passes the Luhn mod 36 checksum.
+  /// Returns true if [code] passes the official Indian GSTIN mod 36 checksum.
   static bool validate(String code) {
     final input = code.toUpperCase();
+    if (input.length != 15) return false;
     const n = _alphabet.length;
-    int factor = 2;
-    int sum = 0;
+    int total = 0;
 
-    for (int i = input.length - 1; i >= 0; i--) {
+    for (int i = 0; i < 14; i++) {
       final codePoint = _alphabet.indexOf(input[i]);
       if (codePoint == -1) return false;
 
-      int addend = factor * codePoint;
-      factor = factor == 2 ? 1 : 2;
-      addend = (addend ~/ n) + (addend % n);
-      sum += addend;
+      final factor = (i % 2 != 0) ? 2 : 1;
+      final product = codePoint * factor;
+      total += (product ~/ n) + (product % n);
     }
-    return sum % n == 0;
+
+    final checkCode = (n - (total % n)) % n;
+    return _alphabet[checkCode] == input[14];
   }
 }

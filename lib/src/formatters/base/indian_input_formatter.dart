@@ -58,9 +58,8 @@ abstract class IndianInputFormatter extends TextInputFormatter {
       formatted: formatted,
       significantCount: significantBefore,
       isFormattingChar: isFormattingChar,
-      prefixLength: prefix.isNotEmpty && formatted.startsWith(prefix)
-          ? prefix.length
-          : 0,
+      prefixLength:
+          prefix.isNotEmpty && formatted.startsWith(prefix) ? prefix.length : 0,
     );
 
     return TextEditingValue(

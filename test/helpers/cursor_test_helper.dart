@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -11,10 +9,10 @@ void expectFormatter({
   required TextEditingValue newValue,
   required String expectedText,
   required int expectedCursor,
-}){
+}) {
   final result = formatter.formatEditUpdate(oldValue, newValue);
-  expect(result.text,expectedText,reason: 'Text Mismatch');
-    expect(
+  expect(result.text, expectedText, reason: 'Text Mismatch');
+  expect(
     result.selection.baseOffset,
     expectedCursor,
     reason: 'cursor mismatch',

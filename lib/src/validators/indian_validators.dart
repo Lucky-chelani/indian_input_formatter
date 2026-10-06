@@ -10,7 +10,7 @@ class IndianValidators {
 
   static final RegExp _panRegex = RegExp(r'^[A-Z]{5}[0-9]{4}[A-Z]$');
   static final RegExp _gstinRegex = RegExp(
-    r'^\d{2}[A-Z]{5}\d{4}[A-Z]\d[A-Z]\d$',
+    r'^\d{2}[A-Z]{5}\d{4}[A-Z][1-9A-Z]Z[0-9A-Z]$',
   );
   static final RegExp _ifscRegex = RegExp(r'^[A-Z]{4}0[A-Z0-9]{6}$');
   static final RegExp _upiRegex = RegExp(r'^[a-zA-Z0-9.\-_]{2,}@[a-zA-Z]{2,}$');

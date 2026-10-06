@@ -8,9 +8,9 @@ void main() {
   const formatter = PanInputFormatter();
 
   TextEditingValue value(String text, [int? cursor]) => TextEditingValue(
-    text: text,
-    selection: TextSelection.collapsed(offset: cursor ?? text.length),
-  );
+        text: text,
+        selection: TextSelection.collapsed(offset: cursor ?? text.length),
+      );
 
   group('PanInputFormatter', () {
     test('uppercases lowercase input', () {

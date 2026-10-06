@@ -1,7 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:indian_input_formatter/src/formatters/base/cursor_mapper.dart';
 
-
 void main() {
   bool isSpace(String c) => c == ' ';
 
